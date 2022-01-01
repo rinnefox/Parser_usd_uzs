@@ -22,12 +22,12 @@ def chasing_course():
 
     # Разница старого и нового курса
     if cur != course and cur - course > 0 and cur != 0:
-        variance = f'Курс увеличился на {cur - course}uzb.'
+        variance = f'Курс увеличился на {cur - course}uzs.'
         # Новый курс
         cur = course
         return cur, variance
     elif cur != course and cur - course < 0 and cur != 0:
-        variance = f'Курс уменьшился на {course - cur}uzb.'
+        variance = f'Курс уменьшился на {course - cur}uzs.'
         # Новый курс
         cur = course
         return cur, variance
@@ -45,10 +45,10 @@ def main():
     chasing_course()
 
     api_bot = 'https://api.telegram.org/bot<ТОКЕН БОТА>'
-    user_id = '1834878744'
+    user_id = 'ВАШ ТЕЛЕГРАМ ID'
 
     # Http запрос для отправки сообщения через телеграм бот
-    requests.get(api_bot + f'/sendMessage?chat_id={user_id}&text={variance}\nТекущий курс 1$ = {cur}uzb')
+    requests.get(api_bot + f'/sendMessage?chat_id={user_id}&text={variance}\nТекущий курс 1$ = {cur}uzs')
 
     # Рекурсия
     main()
